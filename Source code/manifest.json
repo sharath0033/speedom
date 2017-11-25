@@ -1,0 +1,32 @@
+{
+  "manifest_version": 2,
+  "name": "SpeeDOM",
+  "description": "Calcutates the speed/time of DOM ready state.",
+  "version": "1.0.0",
+  "browser_action": {
+    "default_icon": "img/icon16.png",
+    "default_popup": "speedom.html",
+    "default_title": "SpeeDOM"
+  },
+  "permissions": [
+    "activeTab",
+    "<all_urls>",
+    "storage"
+  ],
+  "icons": { 
+      "16": "img/icon16.png",
+      "48": "img/icon48.png",
+      "128": "img/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["js/browser_polyfill.js", "js/content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "background": {
+    "scripts": ["js/browser_polyfill.js", "libraries/underscore.js", "js/background.js"],
+    "persistent": false
+  }
+}

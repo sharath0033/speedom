@@ -1,0 +1,160 @@
+body {
+  width: 270px;
+  background-color: #f1f1f1;
+}
+body .btnClass {
+  position: absolute;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  background-repeat: no-repeat;
+  background-image: url(../img/csSprite.png);
+  transition: all .5s;
+  -webkit-transition: all .5s;
+}
+body .rotateToggle {
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+}
+body .rotateToggleFull {
+  transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+}
+body header {
+  position: relative;
+  border-bottom: 1px solid #000000;
+  margin-bottom: 5px;
+}
+body header h2 {
+  margin: 10px 0px;
+}
+body header #saveBtn {
+  background-position: -37px -5px;
+  top: 0;
+  right: 35px;
+}
+body header #switchBtn {
+  background-position: -5px -36px;
+  top: 0;
+  right: 3px;
+}
+body section {
+  padding: 5px;
+  max-height: 250px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+}
+body section::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+body section::-webkit-scrollbar {
+  width: 6px;
+  margin: 2px 4px;
+  background-color: #F5F5F5;
+}
+body section::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #868686;
+}
+body section #speedList #noData {
+  text-align: center;
+}
+body section #speedList #noData span {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+body section #speedList .infoGroup {
+  margin: 0px 0px 10px 0px;
+  padding: 5px;
+  border: 1px dashed #000000;
+}
+body section #speedList .infoGroup > div {
+  font-weight: bold;
+}
+body section #speedList .infoGroup > div #avgSpeed {
+  font-weight: normal;
+  margin-left: 10px;
+}
+body section #speedList .listGroup {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  padding: 5px 10px;
+  background-color: #ffffff;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+body section #speedList .listGroup:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15), 0 5px 5px rgba(0, 0, 0, 0.12);
+}
+body section #speedList .listGroup .label {
+  font-weight: bold;
+  font-size: 12px;
+  display: inline-block;
+  width: 70px;
+  text-align: right;
+  margin-right: 10px;
+}
+body section #speedList .listGroup .speedNumber {
+  font-size: 1.1em;
+  font-weight: bold;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+body section #speedList .listGroup .speedNumber > span.suffix {
+  font-weight: normal;
+  font-size: 11px;
+}
+body section #speedList .listGroup .container {
+  padding: 3px 0px;
+  position: relative;
+}
+body section #speedList .listGroup .container .timeStamp {
+  display: inline-block;
+  vertical-align: middle;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+body section #aboutSpeedom {
+  display: none;
+}
+body section #aboutSpeedom img {
+  display: block;
+  margin: auto;
+}
+body section #aboutSpeedom #extInfo {
+  margin: 10px 0px;
+  text-align: center;
+}
+body section #aboutSpeedom #extInfo span {
+  display: block;
+}
+body section #aboutSpeedom #extDesc {
+  margin-bottom: 10px;
+}
+body section #aboutSpeedom #extFeatures div {
+  font-size: 1.2em;
+  font-weight: 500;
+}
+body section #aboutSpeedom #extFeatures ul {
+  padding-left: 20px;
+  margin-top: 5px;
+}
+body section #aboutSpeedom #developedBy {
+  float: right;
+}
+body section #aboutSpeedom #developedBy span {
+  display: block;
+}
+body footer {
+  border-top: 1px solid #000000;
+  margin-top: 5px;
+}

@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+    <head>
+        <title>SpeeDOM</title>
+        <link href="css/speedom.css" rel="stylesheet" />
+        <script src="libraries/jquery.js"></script>
+        <script src="libraries/underscore.js"></script>
+    </head>
+    <body> 
+        <header>
+            <h2><img src="img/icon16.png"/> SpeeDOM</h2>
+            <i id="saveBtn" class="btnClass"></i>
+            <i id="switchBtn" class="btnClass rotateToggle"></i>
+        </header>
+        
+        <section>
+            <span id="speedList"></span>
+
+            <span id="aboutSpeedom">
+                <img src="img/logo48.png"/>
+                <div id="extInfo">
+                    <span><b>SpeeDOM</b></span>
+                    <span>Version 1.0.0</span>
+                </div>
+                <div id="extDesc">'Credential Store' is a Chrome extension used to store domain specific credentials and login by cliking on the desired credential.</div>
+                <div id="extFeatures">
+                    <div>Features:</div>
+                    <ul>
+                        <li>One click redirection to domain.</li>
+                        <li>Material UI.</li>
+                        <li>Credentials sorting according to domain.</li>
+                        <li>Environment specific badges.</li>
+                        <li>Delete specific credential.</li>
+                        <li>Reset entire data.</li>
+                        <li>Automated login using saved credentials.</li>
+                        <li>Toggle between doamin specific and all avaliable credentials.</li>
+                    </ul>
+                </div>
+                <div id="developedBy">
+                    <span><b>Developed By</b></span>
+                    <span>P.Sharath Chandra</span>
+                </div>
+            </span>
+        </section>
+
+        <footer></footer>
+    </body>
+    <script src="js/browser_polyfill.js"></script>
+    <script src="js/speedom.js"></script>
+</html>
