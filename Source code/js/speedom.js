@@ -6,7 +6,13 @@ var toggleButton
     ,   speedListHtml = ''
 
 document.body.onload = function(){
-    chrome.storage.sync.get('data', function(_items){
+    getData();
+}
+
+browser.storage.onChanged.addListener(getData);
+
+function getData(){
+    browser.storage.sync.get('data', function(_items){
         browser.tabs.query({currentWindow: true, active:true}, function(_tabs){
             tabIndex = _.findIndex(_items.data, {tabId: _tabs[0].id});
             if(_tabs[0]!=undefined && tabIndex!=-1){
