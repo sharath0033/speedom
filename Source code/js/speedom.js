@@ -73,5 +73,54 @@ function setNoData(){
 }
 
 function saveData(){
-    console.log("Data Saved", savedSpeedList);
+    JSONToXls(savedSpeedList.speedStamps);
+}
+
+function JSONToXls(_data) {
+    var labelData = ['DOM speed', 'Timestamp'];
+    var CSV = '';
+    var fileName = "MyReport_";
+    var averageSpeed = 0;
+
+    var date = new Date().toLocaleDateString("en-US",{year:'numeric', month:'short', day:'numeric', hour:'2-digit', minute:'2-digit', second:'2-digit'}).replace(' ','_').replace(/ /g,'').replace(/,/g,'_');
+    //var fileName1 = fileName + '' 
+    CSV += fileName + date + '\r\n\n';
+
+    var labelRow = "";
+    for (var index in labelData) {
+        labelRow += labelData[index] + ',';
+    }
+    labelRow = labelRow.slice(0, -1);
+    CSV += labelRow + '\r\n';
+    
+    for (var i = 0; i < _data.length; i++) {
+        var row = "";
+
+        for (var index in _data[i]) {
+            if(index != 'formattedDomSpeed'){
+                if(index == 'domSpeed'){
+                    var speed = new Date(_data[i][index])
+                    row += '"' + speed.getUTCMinutes()+' min : '+speed.getUTCSeconds()+' sec : '+speed.getMilliseconds()+' ms' + '",';
+                    averageSpeed = averageSpeed+_data[i][index];
+                }else{
+                    row += '"' + _data[i][index] + '",';
+                }   
+            }
+        }
+
+        row.slice(0, row.length - 1);
+        CSV += row + '\r\n';
+    }
+    
+    averageSpeed = new Date(averageSpeed/_data.length)
+
+    CSV += '\n'+"Average DOM load speed:, " + averageSpeed.getUTCMinutes()+' min : '+averageSpeed.getUTCSeconds()+' sec : '+averageSpeed.getMilliseconds()+' ms' + '\r\n';
+
+    var uri = 'data:text/csv;charset=utf-8,' + escape(CSV);
+
+    browser.downloads.download({
+        url : uri,
+        filename : fileName+'.csv',
+        saveAs : true
+      });
 }
